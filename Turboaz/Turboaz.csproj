@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddingNewCar.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -125,6 +126,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\2018_hyundai_accent_sedan_limited_fq_oem_14_815.jpg" />
+    <Content Include="Images\2020_kia_optima_sedan_sx_fq_oem_3_815.jpg" />
+    <Content Include="Images\2021_mercedes-benz_gls-class_4dr-suv_amg-gls-63_fq_oem_2_815.jpg" />
+    <Content Include="Images\clipart4407270.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -187,6 +192,14 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddingNewCar.aspx.cs">
+      <DependentUpon>AddingNewCar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddingNewCar.aspx.designer.cs">
+      <DependentUpon>AddingNewCar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\SqlFuncs.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -245,6 +258,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Turboaz.App_Code;
+using Turboaz.Models;
 
 namespace Turboaz
 {
@@ -21,11 +23,6 @@ namespace Turboaz
             }
         }
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         protected void ddlMark_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(ddlMark.SelectedValue);
@@ -33,6 +30,11 @@ namespace Turboaz
             ddlModel.DataTextField = "ModelName";
             ddlModel.DataValueField = "ModelId";
             ddlModel.DataBind();
+        }
+        [WebMethod]
+        public static string Save(SavedCarModel dto)
+        {
+            return "Posted";
         }
     }
 }

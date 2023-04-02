@@ -77,7 +77,7 @@ namespace Turboaz.App_Code
             try
             {
                 connection.Open();
-                return command.ExecuteNonQuery()>0;
+                return command.ExecuteNonQuery() > 0;
             }
             catch (Exception ex)
             {
@@ -89,7 +89,6 @@ namespace Turboaz.App_Code
             }
         }
         public static DataTable GetAllCars() => GetDataTableFromProcedure("SelectAllCars");
-
         public static DataTable GetModels(int id)
         {
             SqlParameter[] sqlParametr = new SqlParameter[]
@@ -100,7 +99,6 @@ namespace Turboaz.App_Code
             return GetDataTableFromProcedure("GetModels", sqlParametr);
         }
         public static DataTable GetMarks() => GetDataTableFromProcedure("GetMarks");
-
         public static bool SaveNewCar(int CarMarkId, int CarModelId, int Price, string ImagePath, DateTime CreatedDate, int CreatedUserId, int Status)
         {
             try
@@ -122,5 +120,24 @@ namespace Turboaz.App_Code
                 throw ex;
             }
         }
+        public static DataTable GetFilteredTable(int? CarMarkId, int? CarModelId, double? MinPrice, double? MaxPrice)
+        {
+            try
+            {
+                SqlParameter[] sqlParametr = new SqlParameter[]
+                {
+                new SqlParameter("@Mark",(object)CarMarkId??DBNull.Value),
+                new SqlParameter("@Model",(object)CarModelId??DBNull.Value),
+                new SqlParameter("@MinPrice",(object)MinPrice??DBNull.Value),
+                new SqlParameter("@MaxPrice",(object)MaxPrice??DBNull.Value)
+                };
+                return GetDataTableFromProcedure("FilterTable", sqlParametr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

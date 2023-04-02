@@ -10,7 +10,6 @@ using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Turboaz.App_Code;
-using Turboaz.Models;
 
 namespace Turboaz
 {
@@ -94,7 +93,7 @@ namespace Turboaz
                 }
             }
             ddlMark.SelectedValue = "-1";
-            ddlModel.SelectedValue = "-1B";
+            ddlModel.SelectedValue = "-1";
             txtPrice.Text = "";
         }
     }

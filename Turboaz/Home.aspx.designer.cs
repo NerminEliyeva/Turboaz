@@ -24,6 +24,60 @@ namespace Turboaz
         protected global::System.Web.UI.WebControls.Button btnAddNewCarPage;
 
         /// <summary>
+        /// lblMessageFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessageFilter;
+
+        /// <summary>
+        /// ddlMark control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMark;
+
+        /// <summary>
+        /// ddlModel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlModel;
+
+        /// <summary>
+        /// txtMinPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMinPrice;
+
+        /// <summary>
+        /// txtMaxPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaxPrice;
+
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearch;
+
+        /// <summary>
         /// carsRepeater control.
         /// </summary>
         /// <remarks>

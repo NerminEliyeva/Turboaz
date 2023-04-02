@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Web;
@@ -16,7 +17,7 @@ namespace Turboaz.App_Code
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.Connection = connection;
-            command.CommandText = commandText;         
+            command.CommandText = commandText;
             try
             {
                 connection.Open();
@@ -43,7 +44,7 @@ namespace Turboaz.App_Code
             command.CommandText = commandText;
             foreach (var item in parametrs)
             {
-                command.Parameters.AddWithValue(item.ParameterName,item.Value);
+                command.Parameters.AddWithValue(item.ParameterName, item.Value);
             }
             try
             {
@@ -62,20 +63,64 @@ namespace Turboaz.App_Code
                 connection.Close();
             }
         }
+        public static bool ExecuteProcedure(string commandText, SqlParameter[] parametrs)
+        {
+            SqlConnection connection = new SqlConnection("Server=DESKTOP-ME658FN\\SQLEXPRESS; Database= TurboazDb; Trusted_Connection=true");
+            SqlCommand command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.Connection = connection;
+            command.CommandText = commandText;
+            foreach (var item in parametrs)
+            {
+                command.Parameters.AddWithValue(item.ParameterName, item.Value);
+            }
+            try
+            {
+                connection.Open();
+                return command.ExecuteNonQuery()>0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         public static DataTable GetAllCars() => GetDataTableFromProcedure("SelectAllCars");
 
         public static DataTable GetModels(int id)
         {
-            SqlParameter[] sqlParametr = new SqlParameter[] 
+            SqlParameter[] sqlParametr = new SqlParameter[]
             {
-                new SqlParameter("@MarkId",id)   
+                new SqlParameter("@MarkId",id)
             };
 
-          return  GetDataTableFromProcedure("GetModels", sqlParametr);
+            return GetDataTableFromProcedure("GetModels", sqlParametr);
         }
-        public static DataTable GetMarks()
+        public static DataTable GetMarks() => GetDataTableFromProcedure("GetMarks");
+
+        public static bool SaveNewCar(int CarMarkId, int CarModelId, int Price, string ImagePath, DateTime CreatedDate, int CreatedUserId, int Status)
         {
-            return GetDataTableFromProcedure("GetMarks");
+            try
+            {
+                SqlParameter[] sqlParametr = new SqlParameter[]
+                {
+                new SqlParameter("@CarMarkId",CarMarkId),
+                new SqlParameter("@CarModelId",CarModelId),
+                new SqlParameter("@Price",Price),
+                new SqlParameter("@ImagePath",ImagePath),
+                new SqlParameter("@CreatedDate",CreatedDate),
+                new SqlParameter("@CreatedUserId",CreatedUserId),
+                new SqlParameter("@Status",Status),
+                };
+                return ExecuteProcedure("InsertCar", sqlParametr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

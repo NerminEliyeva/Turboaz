@@ -79,8 +79,15 @@ namespace Turboaz
                 string timePath = time.ToString("yyyyMMddHHmmssfff");
                 string fileName = Path.GetFileName(fileUpload.PostedFile.FileName);
                 string filePath = Server.MapPath("~/Images/" + timePath + fileName);
+                int userId = 0;
+                if (Session["UserId"] != null) 
+                 userId= Convert.ToInt32(Session["UserId"].ToString());
+
+                bool isAdmin = Session["role"]?.ToString() == "admin";
+                int status = 2;
+                if (isAdmin) status = 1;
                 fileUpload.SaveAs(filePath);
-                SqlFuncs.SaveNewCar(mark, model, price, "/Images/" + timePath + fileName, time, 1, 1);
+                SqlFuncs.SaveNewCar(mark, model, price, "/Images/" + timePath + fileName, time, userId, status);
             }
             else
             {

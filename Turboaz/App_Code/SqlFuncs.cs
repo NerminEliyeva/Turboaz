@@ -89,6 +89,7 @@ namespace Turboaz.App_Code
             }
         }
         public static DataTable GetAllCars() => GetDataTableFromProcedure("SelectAllCars");
+        public static DataTable GetCarsAppeals() => GetDataTableFromProcedure("GetCarsAppeals");
         public static DataTable GetModels(int id)
         {
             SqlParameter[] sqlParametr = new SqlParameter[]
@@ -168,6 +169,23 @@ namespace Turboaz.App_Code
 
                 };
                 return GetDataTableFromProcedure("ValidateUserAndGetRole", sqlParametr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public static bool UpdateCarStatus(int id, int status)
+        {
+            try
+            {
+                SqlParameter[] sqlParametr = new SqlParameter[]
+                {
+                new SqlParameter("@id",id),
+                new SqlParameter("@newStatus",status)
+
+                };
+                return ExecuteProcedure("UpdateCarStatus", sqlParametr);
             }
             catch (Exception ex)
             {

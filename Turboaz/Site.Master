@@ -63,8 +63,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/Home">Ana səhifə</a>
                         </li>
-                        <li class="nav-item">
+                         <li class="nav-item">
                             <a class="nav-link" href="/About">Haqqımızda</a>
+                        </li>
+                        <li class="nav-item" ID="liAppeal" runat="server" visible="false">
+                            <asp:Button ID="btnAppeal" runat="server"  Text="Müraciətlər" OnClick="btnAppeal_Click" CssClass="nav-link" />
                         </li>
                     </ul>
                     <div class="d-flex align-items-center">

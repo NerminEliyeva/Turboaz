@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace Turboaz
 {
-    public partial class Contact : Page
+    public partial class Register : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

@@ -43,7 +43,7 @@
                 <a class="navbar-brand me-2" href="/Home">
                     <img
                         src="Images\clipart4407270.png"
-                        height="30"
+                        height="40"
                         alt="MDB Logo"
                         loading="lazy"
                         style="margin-top: -1px;" />
@@ -61,19 +61,15 @@
                 <div class="collapse navbar-collapse" id="navbarButtonsExample">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Home">Home</a>
+                            <a class="nav-link" href="/Home">Ana səhifə</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/About">About</a>
+                            <a class="nav-link" href="/About">Haqqımızda</a>
                         </li>
                     </ul>
                     <div class="d-flex align-items-center">
-                        <button type="button" class="btn btn-link px-3 me-2">
-                            Login
-                        </button>
-                        <button type="button" class="btn btn-secondary me-3">
-                            Sign up for free
-                        </button>
+                     <a href="/Login" class="btn btn-link px-3 me-2">Daxil ol</a>
+                     <a href="/Register" class="btn btn-secondary me-3">Qeydiyyatdan keç</a>
                     </div>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Turboaz.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Əlavə et" CssClass="btn btn-danger" />
 
     <div class="container">
+    <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Maşın əlavə et" CssClass="btn btn-danger" />
         <asp:Label ID="lblMessageFilter" runat="server" ForeColor="Red"></asp:Label>
-        <div class="row my-5 filterForm">
+        <div class="row my-4 filterForm">
             <div class="col-2">
                 <asp:DropDownList ID="ddlMark" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlMark_SelectedIndexChanged" CssClass="form-select">
                 </asp:DropDownList>

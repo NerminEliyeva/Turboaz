@@ -12,7 +12,8 @@
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 text-muted">
                     <div>
                         <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                            <p class="lead fw-bold my-4 text-dark">Daxil olun</p>
+                            <p class=" fw-bold h1 my-4 text-dark">Daxil olun</p>
+
                         </div>
                         <!-- Email input -->
                         <div class="form-outline mb-4">

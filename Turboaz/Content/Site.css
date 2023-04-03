@@ -36,11 +36,8 @@ textarea {
     padding:20px 10px;
 }
 
-
 #MainContent_btnAddNewCarPage {
-    position: absolute;
-    top: 15px;
-    right: 10px;
+
     border-radius:100px;
 }
 /* Responsive: Portrait tablets and up */

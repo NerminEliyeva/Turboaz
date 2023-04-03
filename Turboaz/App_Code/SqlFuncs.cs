@@ -139,5 +139,25 @@ namespace Turboaz.App_Code
             }
         }
 
+        public static bool SaveNewPerson(string Name, string Email, string Phone, string Password, int PersonStatusId)
+        {
+            try
+            {
+                SqlParameter[] sqlParametr = new SqlParameter[]
+                {
+                new SqlParameter("@Name",Name),
+                new SqlParameter("@Email",Email),
+                new SqlParameter("@Phone",Phone),
+                new SqlParameter("@Password",Password),
+                new SqlParameter("@PersonStatusId",PersonStatusId)
+                };
+                return ExecuteProcedure("InsertPerson", sqlParametr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

@@ -36,7 +36,6 @@ namespace Turboaz
             SqlFuncs.UpdateCarStatus(routeId, 0);
             tblRepeater.DataSource = SqlFuncs.GetCarsAppeals();
             tblRepeater.DataBind();
-
         }
     }
 }

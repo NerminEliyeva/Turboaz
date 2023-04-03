@@ -9,13 +9,13 @@
                     <div class="card">
                         <div class="card-body ">
                             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4 text-dark">Maşın əlavə et</p>
-                            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
                             <asp:UpdatePanel runat="server">
                                 <Triggers>
                                     <asp:PostBackTrigger ControlID="btnSave" />
                                 </Triggers>
                                 <ContentTemplate>
                                     <div class="form-group mt-3">
+                            <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
                                         <asp:Label runat="server" AssociatedControlID="ddlMark" CssClass="form-label" Text="Marka"></asp:Label>
                                         <asp:DropDownList ID="ddlMark" runat="server" OnSelectedIndexChanged="ddlMark_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control">
                                         </asp:DropDownList>

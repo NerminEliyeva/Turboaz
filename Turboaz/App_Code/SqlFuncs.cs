@@ -138,7 +138,6 @@ namespace Turboaz.App_Code
                 throw ex;
             }
         }
-
         public static bool SaveNewPerson(string Name, string Email, string Phone, string Password, int PersonStatusId)
         {
             try
@@ -158,6 +157,22 @@ namespace Turboaz.App_Code
                 throw ex;
             }
         }
+        public static DataTable ValidationLogin(string email, string password)
+        {
+            try
+            {
+                SqlParameter[] sqlParametr = new SqlParameter[]
+                {
+                new SqlParameter("@Email",email),
+                new SqlParameter("@password",password)
 
+                };
+                return GetDataTableFromProcedure("ValidateUserAndGetRole", sqlParametr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

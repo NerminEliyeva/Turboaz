@@ -4,10 +4,12 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net.Mail;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
 using Turboaz.App_Code;
 
 namespace Turboaz
@@ -21,7 +23,7 @@ namespace Turboaz
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Length<1)
+            if (txtName.Text.Length < 1)
             {
                 lblMessageError.Text = "Adınızı daxil edin.";
                 return;
@@ -46,7 +48,7 @@ namespace Turboaz
             }
             string phone = txtPhone.Text;
 
-            if (txtPasswordRegister.Text.Length<6)
+            if (txtPasswordRegister.Text.Length < 6)
             {
                 lblMessageError.Text = "Şifrə 6 simvoldan az ola bilməz.";
                 return;

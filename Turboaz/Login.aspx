@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Turboaz.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <asp:Label ID="lblTest" runat="server" ForeColor="Red"></asp:Label>
     <section class="vh-100">
         <div class="container-fluid h-custom ">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -13,8 +13,8 @@
                     <div>
                         <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                             <p class=" fw-bold h1 my-4 text-dark">Daxil olun</p>
-
                         </div>
+                          <asp:Label ID="lblNotFound" runat="server" ForeColor="Red"></asp:Label>
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <asp:Label runat="server" AssociatedControlID="txtEmailLogin" CssClass="form-label" Text="Email ünvanı"></asp:Label>
@@ -36,9 +36,8 @@
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="button" class="btn btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">
-                                Login</button>
+                       
+                            <asp:Button ID="btnLogin" runat="server"  Text="Təsdiqlə" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-lg" />
                             <p class="small fw-bold mt-2 pt-1 mb-0">
                                 Don't have an account? <a href="/Register"
                                     class="link-danger">Register</a>
@@ -50,8 +49,5 @@
             </div>
         </div>
     </section>
-
-
-
 
 </asp:Content>

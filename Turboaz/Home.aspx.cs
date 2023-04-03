@@ -17,8 +17,6 @@ namespace Turboaz
         {
             if (!Page.IsPostBack)
             {
-
-
                 carsRepeater.DataSource = SqlFuncs.GetAllCars();
                 carsRepeater.DataBind();
 

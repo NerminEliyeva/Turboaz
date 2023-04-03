@@ -1,35 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Turboaz.Home" %>
 
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="masin elave et"/>
-    <asp:Repeater ID="carsRepeater" runat="server">
-        <ItemTemplate>
-            <img
-                src="<%# Eval("ImagePath")%>"
-                height="300"
-                loading="lazy" />
-            <p><%# Eval("MarkName") %></p>
-            <p><%# Eval("ModelName") %></p>
-            <p><%# Eval("Price") %></p>
-            
-            <p><%# Eval("CreatedDate") %></p>
-        </ItemTemplate>
-    </asp:Repeater>
-</asp:Content>--%>
-
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Əlavə et" CssClass="btn btn-dark" />
+    <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Əlavə et" CssClass="btn btn-danger" />
 
     <div class="container">
         <asp:Label ID="lblMessageFilter" runat="server" ForeColor="Red"></asp:Label>
         <div class="row my-5 filterForm">
             <div class="col-2">
-                <asp:DropDownList ID="ddlMark" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlMark_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlMark" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlMark_SelectedIndexChanged" CssClass="form-select">
                 </asp:DropDownList>
             </div>
             <div class="col-2">
-                <asp:DropDownList ID="ddlModel" runat="server">
+                <asp:DropDownList ID="ddlModel" runat="server" CssClass="form-select">
                 </asp:DropDownList>
             </div>
             <div class="col-3">

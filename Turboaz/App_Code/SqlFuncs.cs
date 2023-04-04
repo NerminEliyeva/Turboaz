@@ -141,7 +141,7 @@ namespace Turboaz.App_Code
                 throw ex;
             }
         }
-        public static bool SaveNewPerson(string Name, string Email, string Phone, string Password, int PersonStatusId)
+        public static bool SaveNewPerson(string Name, string Email, string Phone, string Password, int PersonRoleId)
         {
             try
             {
@@ -151,7 +151,7 @@ namespace Turboaz.App_Code
                 new SqlParameter("@Email",Email),
                 new SqlParameter("@Phone",Phone),
                 new SqlParameter("@Password",Password),
-                new SqlParameter("@PersonStatusId",PersonStatusId)
+                new SqlParameter("@PersonRoleId",PersonRoleId)
                 };
                 return ExecuteProcedure("InsertPerson", sqlParametr);
             }

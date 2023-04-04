@@ -21,6 +21,8 @@ namespace Turboaz
         {
             if (!Page.IsPostBack)
             {
+                Session["source"] = SqlFuncs.GetAllCars();
+
                 GetCars();
 
                 DataTable dt = SqlFuncs.GetMarks();
@@ -42,6 +44,7 @@ namespace Turboaz
 
         private void GetCars()
         {
+            DataTable dt = (DataTable)Session["source"];
             PagedDataSource pdsData = new PagedDataSource();
             DataView dv = new DataView(SqlFuncs.GetAllCars());
             pdsData.DataSource = dv;
@@ -138,9 +141,8 @@ namespace Turboaz
             {
                 maxPrice = prcmax;
             }
+            Session["source"] = SqlFuncs.GetFilteredTable(mark, model, minPrice, maxPrice);
 
-            carsRepeater.DataSource = SqlFuncs.GetFilteredTable(mark, model, minPrice, maxPrice);
-            carsRepeater.DataBind();
             GetCars();
         }
     }

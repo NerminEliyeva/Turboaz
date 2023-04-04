@@ -3,9 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
-    <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Maşın əlavə et" CssClass="btn btn-danger" />
+        <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Maşın əlavə et" CssClass="btn btn-danger" />
         <div class="row my-4 filterForm">
-        <asp:Label ID="lblMessageFilter" runat="server" ForeColor="Red"></asp:Label>
+            <asp:Label ID="lblMessageFilter" runat="server" ForeColor="Red"></asp:Label>
             <div class="col-2">
                 <asp:DropDownList ID="ddlMark" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlMark_SelectedIndexChanged" CssClass="form-select">
                 </asp:DropDownList>
@@ -43,6 +43,44 @@
             </asp:Repeater>
         </div>
     </div>
+    <%--<div class="divPaging">
+        <div ID="divPaging"  runat="server">
+            <div class="div-first">
+                <asp:LinkButton ID="btnFirst" runat="server" Text="First" Visible="false" OnClick="btnFirst_Click">
+                </asp:LinkButton>
+            </div>
+            <div class="div-previous">
+                <asp:LinkButton ID="btnPrevious" runat="server" Text="Previous" Visible="false" OnClick="btnPrevious_Click">
+                </asp:LinkButton>
+            </div>
+            <div class="div-main-number">
+                <asp:DataList ID="dlPaging" runat="server" OnItemCommand="dlPaging_ItemCommand" OnItemDataBound="dlPaging_ItemDataBound" RepeatDirection="Horizontal">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="btnPaging" runat="server" CommandArgument='<%# Eval("PageIndex") %>' CommandName="Paging" Text='<%# Eval("PageText") %>' />
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="div-next">
+                <asp:LinkButton ID="btnNext" runat="server" Text="Next" Visible="false" OnClick="btnNext_Click">
+                </asp:LinkButton>
+            </div>
+            <div class="div-last">
+                <asp:LinkButton ID="btnLast" runat="server" Text="Last" Visible="false" OnClick="btnLast_Click">
+                </asp:LinkButton>
+            </div>
+        </div>
+    </div>--%>
+
+     <div style="text-align:center" class="divPagination">  
+            <asp:Repeater ID="pageRepeater" runat="server" OnItemCommand="pageRepeater_ItemCommand">  
+                <ItemTemplate>  
+                    <asp:LinkButton ID="lnkPage"  
+                        Style="padding: 8px; margin: 2px; background: lightgray; border: solid 1px #666; color: black; font-weight: bold"  
+                        CommandName="Page" CommandArgument="<%# Container.DataItem %>" runat="server" Font-Bold="True"><%# Container.DataItem %>  
+                    </asp:LinkButton>  
+                </ItemTemplate>  
+            </asp:Repeater>  
+        </div>  
 </asp:Content>
 
 

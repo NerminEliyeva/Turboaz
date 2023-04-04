@@ -18,6 +18,7 @@ namespace Turboaz.App_Code
             command.CommandType = CommandType.StoredProcedure;
             command.Connection = connection;
             command.CommandText = commandText;
+
             try
             {
                 connection.Open();

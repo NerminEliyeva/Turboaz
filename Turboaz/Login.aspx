@@ -28,10 +28,7 @@
 
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Checkbox -->
-                            <div class="form-check mb-0">
-                                <asp:CheckBox ID="chkRememberMe" runat="server" CssClass="form-check-input me-2" />
-                                <asp:Label ID="lblRememberMe" runat="server" AssociatedControlID="chkRememberMe" Text=" Remember me"></asp:Label>
-                            </div>
+                           
                             <a href="#!" class="text-body">Forgot password?</a>
                         </div>
 

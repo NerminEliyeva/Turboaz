@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Turboaz.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container vh-100">
+
+    <div class="container">
         <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Maşın əlavə et" CssClass="btn btn-danger" />
         <div class="row my-4 filterForm">
             <asp:Label ID="lblMessageFilter" runat="server" ForeColor="Red"></asp:Label>
@@ -42,16 +43,15 @@
             </asp:Repeater>
         </div>
     </div>
-
-     <div style="text-align:center" class="divPagination">  
-            <asp:Repeater ID="pageRepeater" runat="server" OnItemCommand="pageRepeater_ItemCommand">  
-                <ItemTemplate>  
-                    <asp:LinkButton ID="lnkPage"  CssClass="btn btn-outline-secondary" 
-                        CommandName="Page" CommandArgument="<%# Container.DataItem %>" runat="server" Font-Bold="True"><%# Container.DataItem %>  
-                    </asp:LinkButton>  
-                </ItemTemplate>  
-            </asp:Repeater>  
-        </div>  
+    <div style="text-align: center" class="divPagination">
+        <asp:Repeater ID="pageRepeater" runat="server" OnItemCommand="pageRepeater_ItemCommand">
+            <ItemTemplate>
+                <asp:LinkButton ID="lnkPage" CssClass="btn btn-outline-secondary"
+                    CommandName="Page" CommandArgument="<%# Container.DataItem %>" runat="server" Font-Bold="True"><%# Container.DataItem %>  
+                </asp:LinkButton>
+            </ItemTemplate>
+        </asp:Repeater>
+    </div>
 </asp:Content>
 
 

@@ -25,13 +25,6 @@
                             <asp:Label runat="server" AssociatedControlID="txtPassword" Text="Şifrə"></asp:Label>
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control form-control-lg" TextMode="Password" Placeholder="Şifrə daxil edin"></asp:TextBox>
                         </div>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <!-- Checkbox -->
-                           
-                            <a href="#!" class="text-body">Forgot password?</a>
-                        </div>
-
                         <div class="text-center text-lg-start mt-4 pt-2">
                        
                             <asp:Button ID="btnLogin" runat="server"  Text="Təsdiqlə" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-lg" />

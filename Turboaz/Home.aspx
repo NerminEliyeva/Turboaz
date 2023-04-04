@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
-        <asp:Button ID="btnAddNewCarPage" runat="server" OnClick="btnAddNewCarPage_Click" Text="Maşın əlavə et" CssClass="btn btn-danger" />
+        <asp:Button ID="btnAddNewCarPage" runat="server" Visible="false" OnClick="btnAddNewCarPage_Click" Text="Maşın əlavə et" CssClass="btn btn-danger" />
         <div class="row my-4 filterForm">
             <asp:Label ID="lblMessageFilter" runat="server" ForeColor="Red"></asp:Label>
             <div class="col-2">

@@ -20,7 +20,9 @@ namespace Turboaz
                 else liAppeal.Visible = false;
 
                 if (isAdmin || isUser) btnLogout.Visible = true;
+                
                 else btnLogout.Visible = false;
+                
             }
 
         }
@@ -34,6 +36,7 @@ namespace Turboaz
         {
             Session["role"] = null;
             btnLogout.Visible = false;
+            Response.Redirect("/home");
         }
 
     }

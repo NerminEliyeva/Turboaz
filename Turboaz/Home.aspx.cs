@@ -21,6 +21,14 @@ namespace Turboaz
         {
             if (!Page.IsPostBack)
             {
+                bool isAdmin = Session["role"]?.ToString() == "admin";
+                bool isUser = Session["role"]?.ToString() == "user";
+
+                if (isAdmin || isUser) btnAddNewCarPage.Visible = true;
+
+                else btnAddNewCarPage.Visible = false;
+
+
                 Session["source"] = SqlFuncs.GetAllCars();
 
                 GetCars();
@@ -41,12 +49,11 @@ namespace Turboaz
                 ddlMark_SelectedIndexChanged(null, null);
             }
         }
-
         private void GetCars()
         {
             DataTable dt = (DataTable)Session["source"];
             PagedDataSource pdsData = new PagedDataSource();
-            DataView dv = new DataView(SqlFuncs.GetAllCars());
+            DataView dv = new DataView(dt);
             pdsData.DataSource = dv;
             pdsData.AllowPaging = true;
             pdsData.PageSize = iPageSize;
@@ -103,6 +110,7 @@ namespace Turboaz
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            ViewState["PageNumber"] = null;
             lblMessageFilter.Text = "";
             int markId = Convert.ToInt32(ddlMark.SelectedValue);
             int? mark = null;

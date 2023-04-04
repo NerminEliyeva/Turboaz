@@ -16,31 +16,12 @@ namespace Turboaz
 {
     public partial class Home : System.Web.UI.Page
     {
-        //PagedDataSource _PagedDataSource = new PagedDataSource();//used the store data from db
         private int iPageSize = 6;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 GetCars();
-                //_PagedDataSource.DataSource = SqlFuncs.GetAllCars().Rows;
-                //_PagedDataSource.AllowPaging = true;
-                //_PagedDataSource.PageSize = 10;
-                //_PagedDataSource.CurrentPageIndex = currentPage;
-                //ViewState["TotalPages"] = _PagedDataSource.Count;
-                //if (SqlFuncs.GetAllCars().Rows.Count < 11)
-                //    divPaging.Visible = false;
-                //btnPrevious.Visible = !_PagedDataSource.IsFirstPage;
-                //btnNext.Visible = !_PagedDataSource.IsLastPage;
-                //btnFirst.Visible = !_PagedDataSource.IsFirstPage;
-                //btnLast.Visible = !_PagedDataSource.IsLastPage;
-
-                //// Bind the data to the repeater control
-                //carsRepeater.DataSource = _PagedDataSource; // rows-a gore evaldakilari oxuya bilmir 
-                //carsRepeater.DataBind();
-
-                ////call paging method
-                //doPaging();
 
                 DataTable dt = SqlFuncs.GetMarks();
                 var row = dt.NewRow();
@@ -61,7 +42,6 @@ namespace Turboaz
 
         private void GetCars()
         {
-
             PagedDataSource pdsData = new PagedDataSource();
             DataView dv = new DataView(SqlFuncs.GetAllCars());
             pdsData.DataSource = dv;
@@ -128,7 +108,6 @@ namespace Turboaz
                 mark = markId;
             }
 
-
             int modelId = Convert.ToInt32(ddlModel.SelectedValue);
             int? model = null;
             if (modelId > -1)
@@ -162,118 +141,7 @@ namespace Turboaz
 
             carsRepeater.DataSource = SqlFuncs.GetFilteredTable(mark, model, minPrice, maxPrice);
             carsRepeater.DataBind();
+            GetCars();
         }
-
-   
-        //    #region doPaging
-        //    protected void btnFirst_Click(object sender, EventArgs e)
-        //    {
-
-        //    }
-
-        //    protected void btnPrevious_Click(object sender, EventArgs e)
-        //    {
-
-        //    }
-
-        //    protected void btnNext_Click(object sender, EventArgs e)
-        //    {
-
-        //    }
-
-        //    protected void btnLast_Click(object sender, EventArgs e)
-        //    {
-
-        //    }
-
-        //    protected void dlPaging_ItemCommand(object source, DataListCommandEventArgs e)
-        //    {
-
-        //    }
-
-        //    protected void dlPaging_ItemDataBound(object sender, DataListItemEventArgs e)
-        //    {
-
-        //    }
-        //    private void doPaging()
-        //    {
-        //        DataTable dt = new DataTable();
-        //        dt.Columns.Add("PageIndex");
-        //        dt.Columns.Add("PageText");
-        //        firstIndex = currentPage - 5;
-        //        if (currentPage > 5)
-        //            lastIndex = currentPage + 5;
-        //        else
-        //            lastIndex = 10;
-        //        if (lastIndex > Convert.ToInt32(ViewState["TotalPages"]))
-        //        {
-        //            lastIndex = Convert.ToInt32(ViewState["TotalPages"]);
-        //            firstIndex = lastIndex - 10;
-        //        }
-        //        if (firstIndex < 0)
-        //            firstIndex = 0;
-        //        for (int i = firstIndex; i < lastIndex; i++)
-        //        {
-        //            DataRow dr = dt.NewRow();
-        //            dr[0] = i;
-        //            dr[1] = i + 1;
-        //            dt.Rows.Add(dr);
-        //        }
-        //        dlPaging.DataSource = dt;
-        //        dlPaging.DataBind();
-        //    }
-        //    #endregion
-
-        //    #region handle index
-        //    private int currentPage
-        //    {
-        //        get
-        //        {
-        //            object objPage = ViewState["_CurrentPage"];
-        //            int _CurrentPage = 0;
-        //            if (objPage == null)
-        //                _CurrentPage = 0;
-        //            else
-        //                _CurrentPage = (int)objPage;
-        //            return _CurrentPage;
-        //        }
-        //        set
-        //        {
-        //            ViewState["_CurrentPage"] = value;
-        //        }
-        //    }
-        //    private int firstIndex
-        //    {
-        //        get {
-        //            int _FirstIndex = 0;
-        //            if (ViewState["_FirstIndex"] == null)
-        //                _FirstIndex = 0;
-        //            else
-        //                _FirstIndex = Convert.ToInt32(ViewState["_FirstIndex"]);
-        //            return _FirstIndex;
-        //        }
-        //        set
-        //        {
-        //            ViewState["_FirstIndex"] = value;
-        //        }
-        //    }
-        //    private int lastIndex
-        //    {
-        //        get
-        //        {
-        //            int _LastIndex = 0;
-        //            if (ViewState["_LastIndex"] == null)
-        //                _LastIndex = 0;
-        //            else
-        //                _LastIndex = Convert.ToInt32(ViewState["_LastIndex"]);
-        //            return _LastIndex;
-        //        }
-        //        set
-        //        {
-        //            ViewState["_LastIndex"] = value;
-        //        }
-        //    }
-        //}
-        //#endregion
     }
 }

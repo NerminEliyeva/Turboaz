@@ -67,12 +67,13 @@
                             <a class="nav-link" href="/About">Haqqımızda</a>
                         </li>
                         <li class="nav-item" ID="liAppeal" runat="server" visible="false">
-                            <asp:Button ID="btnAppeal" runat="server"  Text="Müraciətlər" OnClick="btnAppeal_Click" CssClass="nav-link" />
+                            <asp:Button ID="btnAppeal" runat="server" Text="Müraciətlər" OnClick="btnAppeal_Click1" CssClass="link-danger" />
                         </li>
                     </ul>
                     <div class="d-flex align-items-center">
-                     <a href="/Login" class="btn btn-link px-3 me-2">Daxil ol</a>
-                     <a href="/Register" class="btn btn-secondary me-3">Qeydiyyatdan keç</a>
+                     <a href="/Login" class="btn btn-outline-primary px-3 me-2">Daxil ol</a>
+                     <a href="/Register" class="btn btn-dark me-3">Qeydiyyatdan keç</a>
+                     <asp:Button ID="btnLogout" runat="server" Text="Çıxış" OnClick="btnLogout_Click" CssClass="btn btn-outline-danger" />
                     </div>
                 </div>
             </div>

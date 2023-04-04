@@ -40,42 +40,19 @@ textarea {
 
     border-radius:100px;
 }
-/*.divPaging {
-    padding:10px;
-    background-color:red;
-    width:50px;
+
+.divPagination{
+    width:100%;
     margin:50px auto;
 }
 
-    .divPaging .div-first {
-        float: left;
-        padding: 0px 5px;
-    }
-
-    .divPaging .div-previous {
-        float: left;
-        padding: 0px 5px;
-    }
-
-    .divPaging .div-main-number {
-        float: left;
-        padding: 0px 5px;
-    }
-
-    .divPaging .div-next {
-        float: left;
-        padding: 0px 5px;
-    }
-
-    .divPaging .div-last {
-        float: left;
-        padding: 0px 5px;
-    }*/
-.divPagination{
-    width:800px;
-    margin:auto;
-    background-color:red;
-    margin:100px;
+.pageNum {
+    padding: 4px 8px;
+    margin: 2px;
+    background: #e6efff;
+    border: solid 1px #6666662b;
+    color: black;
+    font-weight: bold;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

@@ -11,9 +11,10 @@ namespace Turboaz.App_Code
 {
     public static class SqlFuncs
     {
+       private static string conString = "Server=DESKTOP-ME658FN\\SQLEXPRESS; Database= TurboazDb; Trusted_Connection=true";
         public static DataTable GetDataTableFromProcedure(string commandText)
         {
-            SqlConnection connection = new SqlConnection("Server=DESKTOP-ME658FN\\SQLEXPRESS; Database= TurboazDb; Trusted_Connection=true");
+            SqlConnection connection = new SqlConnection(conString);
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.Connection = connection;
@@ -38,7 +39,7 @@ namespace Turboaz.App_Code
         }
         public static DataTable GetDataTableFromProcedure(string commandText, SqlParameter[] parametrs)
         {
-            SqlConnection connection = new SqlConnection("Server=DESKTOP-ME658FN\\SQLEXPRESS; Database= TurboazDb; Trusted_Connection=true");
+            SqlConnection connection = new SqlConnection(conString);
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.Connection = connection;
@@ -66,7 +67,7 @@ namespace Turboaz.App_Code
         }
         public static bool ExecuteProcedure(string commandText, SqlParameter[] parametrs)
         {
-            SqlConnection connection = new SqlConnection("Server=DESKTOP-ME658FN\\SQLEXPRESS; Database= TurboazDb; Trusted_Connection=true");
+            SqlConnection connection = new SqlConnection(conString);
             SqlCommand command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.Connection = connection;

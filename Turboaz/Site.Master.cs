@@ -11,17 +11,30 @@ namespace Turboaz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool isAdmin = Session["role"]?.ToString() == "admin";
+            if (!Page.IsPostBack)
+            {
+                bool isAdmin = Session["role"]?.ToString() == "admin";
+                bool isUser = Session["role"]?.ToString() == "user";
 
-            if (isAdmin) liAppeal.Visible = true;
-            else liAppeal.Visible = false;
+                if (isAdmin) liAppeal.Visible = true;
+                else liAppeal.Visible = false;
+
+                if (isAdmin || isUser) btnLogout.Visible = true;
+                else btnLogout.Visible = false;
+            }
 
         }
 
-        protected void btnAppeal_Click(object sender, EventArgs e)
+        protected void btnAppeal_Click1(object sender, EventArgs e)
         {
-
             Response.Redirect("~/Appeal.aspx");
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["role"] = null;
+            btnLogout.Visible = false;
+        }
+
     }
 }
